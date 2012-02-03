@@ -1,7 +1,7 @@
+import sys
 from sympy import *
 
-# TODO: pprint gives some weird output, but futher testing with numerical
-# values is necessary.
+# Exercises in age 24, answers in page 252
 
 x = Symbol('x')
 a = Symbol('a')
@@ -11,23 +11,22 @@ q = Symbol('q')
 m = Symbol('m')
 n = Symbol('n')
 
-problems = [
-	Derivative((x**13), x),                        # Ex. 1
-	Derivative(x ** Rational(-3, 2), x),           # Ex. 2
-	Derivative(x ** (2 * a), x),                   # Ex. 3       
-	Derivative(t ** Float(2.4), t),                # Ex. 4
-	Derivative(u ** Rational(1, 3)),               # Ex. 5
-	Derivative((x ** -5) ** Rational(1, 3)),       # Ex. 6
-	Derivative((1 / x**8) ** Rational(1, 5), x),   # Ex. 7
-	Derivative((2*a*x)**(a-1), x),                 # Ex. 8
-	Derivative((x**3) ** (1/q), x),                # Ex. 9
-	Derivative( (1/(x**m)) ** (1/n), x)            # Ex. 10 
-]
+problems = {
+	1:  Derivative((x**13), x),
+	2:  Derivative(x ** Rational(-3, 2), x),          
+	3:  Derivative(x ** (2 * a), x),                 
+	4:  Derivative(t ** Float(2.4), t),                
+	5:  Derivative(u ** Rational(1, 3)),               
+	6:  Derivative((x ** -5) ** Rational(1, 3)),      
+	7:  Derivative((1 / x**8) ** Rational(1, 5), x),   
+	8:  Derivative((2*a*x)**(a-1), x),                 
+	9:  Derivative((x**3) ** (1/q), x),              
+	10: Derivative( (1/(x**m)) ** (1/n), x)           
+}
 
-for n, p in enumerate(problems):
-	print "Problem ", n + 1
-	print ""
-	pprint(p)
-	print ""
-	pprint(p.doit())
-	print ""
+if __name__ == '__main__':
+	p = int(sys.argv[1])
+	if p in problems:
+		print "Problem %d\t" % p, problems[1]
+		print "Result    \t", problems[1].doit()
+		print "Latex     \t", latex(problems[1].doit())
