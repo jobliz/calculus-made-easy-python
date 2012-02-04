@@ -1,7 +1,7 @@
 import sys
 from sympy import *
 
-# Exercises in age 24, answers in page 252
+# exercises in page 24, answers in page 252
 
 x = Symbol('x')
 a = Symbol('a')
@@ -27,6 +27,6 @@ problems = {
 if __name__ == '__main__':
 	p = int(sys.argv[1])
 	if p in problems:
-		print "Problem %d\t" % p, problems[1]
-		print "Result    \t", problems[1].doit()
-		print "Latex     \t", latex(problems[1].doit())
+		print "Problem %d\t" % p, problems[p]
+		print "Result    \t", problems[p].doit()
+		print "Latex     \t", latex(problems[p].doit())
