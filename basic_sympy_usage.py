@@ -4,6 +4,9 @@ from sympy import *
 x = Symbol('x')
 expr = x**3 + 4
 
+# transforming expressions into TeX
+tex = latex(expr)
+
 # calculating dx
 d = Derivative(expr, x)
 r = d.doit() # builds the derivative result (3*x**2)
