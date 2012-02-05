@@ -19,7 +19,6 @@ problems = {
 	6: Derivative(Float(1.18)*t**2 + Float(22.4))
 }
 
-
 if __name__ == '__main__':
 	p = int(sys.argv[1])
 	if p in problems:
